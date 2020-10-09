@@ -1,0 +1,81 @@
+@charset "UTF-8"
+
+@import '_defaults'
+
+body
+    background: linear-gradient(to right, #000000, #a50707ef, #000000)
+    
+.accordeon
+    color: #cac8c8
+    width: 85%
+    margin: 40px auto
+    & div+div
+        margin-top: 20px
+
+.accordeon__item
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        right: 15px
+        top: 20px
+        border: 10px solid transparent
+        border-bottom: none
+        border-top: 10px solid #a50707ef
+        // transform: translate(0, -50%)
+
+.accordeon__item-title
+    cursor: pointer
+    padding: 10px
+    border: 1px solid #a50707ef
+    background-color: rgba(0, 0, 0, .2)
+    position: relative
+    &:hover
+        color: #ffffff
+        background-color: #a5070765
+    
+
+.accordeon__item-content
+    padding: 10px 10px 10px 25px
+    border: 1px solid #000000
+    background-color: rgba(0, 0, 0, .4)
+
+.accordeon__button
+    margin-top: 25px
+    display: flex
+    justify-content: center
+    &-btn + &-btn
+        margin-left: 10px
+    &-btn
+        background-color: rgba(0, 0, 0, .2)
+        color: inherit
+        border: 1px solid #000000
+        border-radius: 50%
+        width: 25px
+        height: 25px
+        display: flex
+        justify-content: center
+        align-items: center
+        &:hover
+            background-color: #a50707ef
+            color: #ffffff
+
+
+.accordeon__item_active
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        right: 15px
+        top: 20px
+        border: 10px solid transparent
+        border-top: none
+        border-bottom: 10px solid #a50707ef
+        // transform: translate(0, -50%)
+
+.mode
+    margin-top: 40px
+    display: flex
+    justify-content: space-around
+    & *
+        color: #ffffff
